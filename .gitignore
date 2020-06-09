@@ -1,0 +1,6 @@
+data/us.csv
+data/us-states.csv
+data/us-counties.csv
+data/fl-county-totals.json
+out/
+.vscode/

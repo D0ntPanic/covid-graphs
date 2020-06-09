@@ -1,0 +1,62 @@
+<div id="${name}-div" style="position: relative; height:${height}pt; width:100%">
+	<canvas id="$name"></canvas>
+</div>
+<script>
+	var ${name}_ctx = document.getElementById('$name').getContext('2d');
+	var ${name}_chart = new Chart(${name}_ctx, {
+		type: 'bar',
+		data: {
+			labels: [$dates],
+			datasets: [
+				{
+					label: '$label',
+					data: [$values],
+					order: 2,
+					backgroundColor: 'rgba(128, 128, 128, 0.4)'
+				},
+				{
+					label: 'Average $label',
+					data: [$averages],
+					type: 'line',
+					order: 1,
+					backgroundColor: 'rgba($color, 0.75)',
+					borderColor: 'rgba($color, 1)'
+				}
+			]
+		},
+		options: {
+			scales: {
+				xAxes: [{
+					ticks: {
+						display: false,
+					},
+					gridLines: {
+						drawTicks: false,
+						drawOnChartArea: false
+					}
+				}],
+				yAxes: [{
+					ticks: {
+						beginAtZero: true,
+						maxTicksLimit: 5,
+						precision: 0
+					},
+					gridLines: {
+						color: 'rgba(54, 54, 54, 1)'
+					},
+					scaleLabel: {
+						display: true,
+						labelString: '$label'
+					}
+				}]
+			},
+			legend: {
+				display: false
+			},
+			maintainAspectRatio: false,
+			animation: {
+				duration: 0
+			}
+		}
+	});
+</script>
