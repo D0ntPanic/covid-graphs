@@ -405,7 +405,7 @@ def generate_svg(colors, links, tooltips, polys, size):
 		for poly in polys[name]:
 			out += '<polygon points="'
 			for pt in poly:
-				out += f'{(pt[0] + x_offset) * x_factor},{height - ((pt[1] + y_offset) * y_factor)} '
+				out += f'{(pt[0] + x_offset) * x_factor:.2f},{height - ((pt[1] + y_offset) * y_factor):.2f} '
 			out += f'" fill="{colors[name]}" stroke="#282828" stroke-width="2" '
 			if name in tooltips:
 				out += f'onmousemove="showTooltip(evt, \'{tooltips[name]}\');" '
